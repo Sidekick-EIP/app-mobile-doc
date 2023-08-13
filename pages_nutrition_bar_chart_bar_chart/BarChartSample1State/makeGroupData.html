@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the makeGroupData method from the BarChartSample1State class, for the Dart programming language.">
+  <title>makeGroupData method - BarChartSample1State class - bar_chart library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">app_mobile</a></li>
+    <li><a href="../../pages_nutrition_bar_chart_bar_chart/pages_nutrition_bar_chart_bar_chart-library.html">bar_chart</a></li>
+    <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State-class.html">BarChartSample1State</a></li>
+    <li class="self-crumb">makeGroupData method</li>
+  </ol>
+  <div class="self-name">makeGroupData</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">makeGroupData</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://pub.dev/documentation/fl_chart/0.55.2/fl_chart/BarChartGroupData-class.html">BarChartGroupData</a></span>
+<span class="name ">makeGroupData</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="makeGroupData-param-x"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">x</span>, </span></li>
+<li><span class="parameter" id="makeGroupData-param-y"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">y</span>, </span></li>
+<li><span class="parameter" id="makeGroupData-param-isTouched">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isTouched</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="makeGroupData-param-barColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a></span> <span class="parameter-name">barColor</span> = <span class="default-value">Colors.white</span>, </span></li>
+<li><span class="parameter" id="makeGroupData-param-width"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">width</span> = <span class="default-value">20</span>, </span></li>
+<li><span class="parameter" id="makeGroupData-param-showTooltips"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">showTooltips</span> = <span class="default-value">const []</span>}</span></li>
+</ol>)
+
+      
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">BarChartGroupData makeGroupData(
+  int x,
+  double y, {
+  bool isTouched = false,
+  Color barColor = Colors.white,
+  double width = 20,
+  List&lt;int&gt; showTooltips = const [],
+}) {
+  return BarChartGroupData(
+    x: x,
+    barRods: [
+      BarChartRodData(
+        toY: isTouched ? y + 1 : y,
+        color: isTouched ? Colors.yellow : barColor,
+        width: width,
+        borderSide: isTouched
+            ? BorderSide(color: Colors.yellow.darken(), width: 1)
+            : const BorderSide(color: Colors.white, width: 0),
+        backDrawRodData: BackgroundBarChartRodData(
+          show: true,
+          toY: 10,
+          color: barBackgroundColor,
+        ),
+      ),
+    ],
+    showingTooltipIndicators: showTooltips,
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">app_mobile</a></li>
+  <li><a href="../../pages_nutrition_bar_chart_bar_chart/pages_nutrition_bar_chart_bar_chart-library.html">bar_chart</a></li>
+  <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State-class.html">BarChartSample1State</a></li>
+  <li class="self-crumb">makeGroupData method</li>
+</ol>
+
+
+    <h5>BarChartSample1State class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/BarChartSample1State.html">BarChartSample1State</a></li>
+
+
+        <li class="section-title">
+          <a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/barBackgroundColor.html">barBackgroundColor</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/context.html">context</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/friday.html">friday</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/isPlaying.html">isPlaying</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/monday.html">monday</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/mounted.html">mounted</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/saturday.html">saturday</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/sunday.html">sunday</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/thursday.html">thursday</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/touchedIndex.html">touchedIndex</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/tuesday.html">tuesday</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/wednesday.html">wednesday</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/widget.html">widget</a></li>
+
+        <li class="section-title"><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/activate.html">activate</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/build.html">build</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/deactivate.html">deactivate</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/debugFillProperties.html">debugFillProperties</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/didChangeDependencies.html">didChangeDependencies</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/didUpdateWidget.html">didUpdateWidget</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/dispose.html">dispose</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/getTitles.html">getTitles</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/initState.html">initState</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/mainBarData.html">mainBarData</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/makeGroupData.html">makeGroupData</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/reassemble.html">reassemble</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/widgets/State/setState.html">setState</a></li>
+          <li><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State/showingGroups.html">showingGroups</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toString.html">toString</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Diagnosticable/toStringShort.html">toStringShort</a></li>
+
+        <li class="section-title inherited"><a href="../../pages_nutrition_bar_chart_bar_chart/BarChartSample1State-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    app_mobile
+      1.0.0+1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
